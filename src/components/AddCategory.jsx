@@ -6,6 +6,8 @@ export const AddCategory = ({ onAddCategory }) => {
 
     const [inputValue, setInputValue] = useState('');
 
+    console.log(process.env.REACT_APP_API_KEY);
+
     const onInputChange = (e) => {
         console.log(e.target.value);
         setInputValue(e.target.value)
