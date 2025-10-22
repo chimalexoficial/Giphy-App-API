@@ -1,8 +1,18 @@
-# React + Vite
+# 🚀 React App with Docker & AWS CI/CD
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A production-ready React (Vite) app containerized with Docker and deployed to **AWS ECS Fargate** via **GitHub Actions**.
 
-Currently, two official plugins are available:
+![Build Status](https://github.com/chimalexoficial/Giphy-App-API/actions/workflows/deploy.yml/badge.svg)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🧩 Tech Stack
+- React + Vite + Tailwind CSS
+- Giphy API
+- Docker + Nginx  
+- AWS ECR + ECS (Fargate)  
+- GitHub Actions (CI/CD)
+
+## ⚙️ How It Works
+Every push to **main** triggers:
+1. **Build** → Docker image created  
+2. **Push** → Image uploaded to AWS ECR  
+3. **Deploy** → ECS pulls and runs the new version automatically
