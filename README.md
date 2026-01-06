@@ -1,18 +1,41 @@
-# 🚀 React App with Docker & AWS CI/CD
+# 🎬 Giphy App
 
-A production-ready React (Vite) app containerized with Docker and deployed to **AWS ECS Fargate** via **GitHub Actions**.
+Giphy App is a modern and interactive React application that allows users to search, explore, and share GIFs using the **Giphy API**. Built with **Vite**, **React**, and **Tailwind CSS**, the app delivers a fast, responsive, and visually engaging experience with a clean component-based architecture.
 
-![Build Status](https://github.com/chimalexoficial/Giphy-App-API/actions/workflows/deploy.yml/badge.svg)
+---
 
-## 🧩 Tech Stack
-- React + Vite + Tailwind CSS
-- Giphy API
-- Docker + Nginx  
-- AWS ECR + ECS (Fargate)  
-- GitHub Actions (CI/CD)
+## 🚀 Features
 
-## ⚙️ How It Works
-Every push to **main** triggers:
-1. **Build** → Docker image created  
-2. **Push** → Image uploaded to AWS ECR  
-3. **Deploy** → ECS pulls and runs the new version automatically
+- 🔍 Search for GIFs in real-time using the Giphy API  
+- 🎞️ Browse trending and popular GIFs  
+- ⚡ Fast performance powered by Vite  
+- 🎨 Responsive and modern UI styled with Tailwind CSS  
+- 🧩 Reusable, component-based React structure  
+
+---
+
+## 🛠️ Tech Stack
+
+- **React.js**
+- **Vite**
+- **Tailwind CSS**
+- **Giphy API**
+- **JavaScript (ES6+)**
+
+---
+
+## 📦 Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/giphy-app.git
+   
+2. Go to folder and install dependencies:
+   ```bash
+   cd /folder-app
+   npm install
+
+3. Start the server:
+   ```bash
+   npm run dev
+
