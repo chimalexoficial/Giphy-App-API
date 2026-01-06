@@ -7,7 +7,6 @@ Giphy App is a modern and interactive React application that allows users to sea
 ## 🚀 Features
 
 - 🔍 Search for GIFs in real-time using the Giphy API  
-- 🎞️ Browse trending and popular GIFs  
 - ⚡ Fast performance powered by Vite  
 - 🎨 Responsive and modern UI styled with Tailwind CSS  
 - 🧩 Reusable, component-based React structure  
@@ -28,7 +27,7 @@ Giphy App is a modern and interactive React application that allows users to sea
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/giphy-app.git
+   git clone insert-repo-url-here
    
 2. Go to folder and install dependencies:
    ```bash
