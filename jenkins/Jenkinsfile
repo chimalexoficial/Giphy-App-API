@@ -9,16 +9,10 @@ pipeline {
 
   stages {
 
-    stage('Checkout') {
-      steps {
-        git 'https://github.com/chimalexoficial/Giphy-App-API.git'
-      }
-    }
-
     stage('Build Image') {
       steps {
         sh '''
-          docker build -t react-vite-app .
+          docker build -t react-vite-app -f docker/Dockerfile .
           docker tag react-vite-app:latest $ECR_REPO:$IMAGE_TAG
         '''
       }
