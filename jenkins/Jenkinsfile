@@ -1,0 +1,53 @@
+pipeline {
+  agent any
+
+  environment {
+    AWS_REGION = "us-east-1"
+    ECR_REPO   = "529928147146.dkr.ecr.us-east-1.amazonaws.com/react-vite-app"
+    IMAGE_TAG  = "latest"
+  }
+
+  stages {
+
+    stage('Checkout') {
+      steps {
+        git 'https://github.com/chimalexoficial/Giphy-App-API.git'
+      }
+    }
+
+    stage('Build Image') {
+      steps {
+        sh '''
+          docker build -t react-vite-app .
+          docker tag react-vite-app:latest $ECR_REPO:$IMAGE_TAG
+        '''
+      }
+    }
+
+    stage('ECR Login') {
+      steps {
+        sh '''
+          aws ecr get-login-password --region $AWS_REGION \
+          | docker login --username AWS --password-stdin $ECR_REPO
+        '''
+      }
+    }
+
+    stage('Push Image') {
+      steps {
+        sh 'docker push $ECR_REPO:$IMAGE_TAG'
+      }
+    }
+
+    stage('Deploy') {
+      steps {
+        sh '''
+          docker stop app || true
+          docker rm app || true
+          docker run -d --name app -p 80:80 $ECR_REPO:$IMAGE_TAG
+        '''
+      }
+    }
+  }
+}
+
