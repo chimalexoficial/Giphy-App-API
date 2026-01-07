@@ -23,18 +23,23 @@ Giphy App is a modern and interactive React application that allows users to sea
 
 ---
 
-## 📦 Installation
+## CI/CD Pipeline
 
-1. Clone the repository:
-   ```bash
-   git clone insert-repo-url-here
+### Workflow
+1. Developer pushes code to the `main` branch
+2. Jenkins pipeline pulls source from GitHub
+3. Docker image is built using a multi-stage Dockerfile
+4. Image is pushed securely to Amazon ECR using IAM roles
+5. Application container is deployed on AWS EC2
+
+### Tools & Technologies
+- AWS (EC2, ECR, IAM)
+- Jenkins
+- Docker
+- Terraform
+- Linux (Ubuntu)
+- Git/GitHub
+
    
-2. Go to folder and install dependencies:
-   ```bash
-   cd /folder-app
-   npm install
 
-3. Start the server:
-   ```bash
-   npm run dev
 
